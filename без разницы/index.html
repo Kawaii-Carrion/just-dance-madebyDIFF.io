@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Танцевальный клуб</title>
+    <link href="assets/CSS/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fc;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: #4988C4 !important;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: #2c3e50 !important;
+            margin: 0 8px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #4988C4 !important;
+        }
+
+        .btn-dance {
+            background: linear-gradient(135deg, #4988C4, #4988C4);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-dance:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(59, 89, 223, 0.3);
+            color: white;
+        }
+
+        .hero-section {
+            background: linear-gradient(145deg, #ffffff 0%, #f1f3f9 100%);
+            padding: 120px 0 80px;
+            margin-top: 56px;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #1a2639;
+        }
+
+        .hero-title span {
+            color: #4a5567;
+            background: linear-gradient(145deg, #4988C4, #4988C4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1a2639;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #4988C4, #0F2854);
+            margin: 15px auto 0;
+            border-radius: 4px;
+        }
+
+        .card-dance {
+            border: none;
+            border-radius: 25px;
+            background: white;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            overflow: hidden;
+        }
+
+        .card-dance:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.05);
+        }
+
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4988C4, #4988C4);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: #000000;
+            font-size: 2rem;
+        }
+
+        .organizer-img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 5px solid white;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .gallery-item img {
+            border-radius: 16px;
+            border: 5px solid white;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-card i {
+            color: #000000;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+
+        .footer {
+            background: #0F2854;
+            color: #ffffff;
+            padding: 40px 0;
+        }
+
+        .footer a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .form-control,
+        .form-select {
+            border-radius: 20px;
+            padding: 12px 20px;
+            border: 1px solid #e9ecef;
+        }
+
+        .form-control:focus {
+            border-color: #4988C4;
+            box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-fire-flame-simple me-2"></i>Just Dance</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">О клубе</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#organizer">Организаторы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#forwhom">Для кого</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#schedule">Расписание</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Отзывы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#register">Регистрация</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero секция -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-md-start">
+                    <h1 class="hero-title mb-4">Танцуй, <span>вдохновляй</span>, <br>будь собой</h1>
+                    <p class="lead text-secondary mb-5">Студенческий танцевальный клуб, где каждый найдет
+                        свой ритм. От хип-хопа до К-РОР, зажги с нами!</p>
+                    <a href="#register" class="btn btn-dance btn-lg"><i
+                            class="fas fa-calendar-check me-2"></i>Записаться в клуб</a>
+                </div>
+                <div class="col-lg-6 d-none d-md-block">
+                    <img src="img/dance10.jpg" alt="Dance" class="img-fluid rounded-5 shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О Танцевальном клубе -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">О клубе</h2>
+            <p class="text-center text-secondary mb-5">Место для вдохновения и движения</p>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card-dance p-4">
+                        <div class="icon-box"><i class="fas fa-chalkboard-user"></i></div>
+                        <h4>Опытные руководители</h4>
+                        <p class="text-secondary">Занятия ведут молодые танцоры и энтузиасты
+                            своего дела, полные энергии и желания передать знания другим.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-dance p-4">
+                        <div class="icon-box"><i class="fas fa-people-group"></i></div>
+                        <h4>Дружное комьюнити</h4>
+                        <p class="text-secondary">Активные участники, регулярные встречи, обмен опытом и поддержка</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-dance p-4">
+                        <div class="icon-box"><i class="fas fa-calendar-alt"></i></div>
+                        <h4>Регулярные мероприятия</h4>
+                        <p class="text-secondary">Тренировки проводятся часто по расписанию,
+                            а сам клуб учавствуюет на разлиных выступлениях от колледжа</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Об организаторах -->
+    <section id="organizer" class="py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 text-center">
+                    <img src="img/sveta.jpg" alt="Организатор" class="organizer-img">
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="section-title" style="text-align: left;">Света Скоморохова</h2>
+                    <div class="section-title:after ms-0"></div>
+                    <p class="lead text-secondary mt-4">Основательница клуба, хореограф</p>
+                    <p class="text-secondary">Занимается 6 лет профессиональными народными танцами, <br>
+                        окончила курсы и выступает на сцене в колледже. Основала клуб <br>чтобы помагать
+                        будущим танцорам развиваться в этом направлении.</p>
+                    <div class="mt-4">
+                        <span class="badge bg-light text-dark me-2 p-3"><i
+                                class="fab fa-vk me-2"></i>@dance.sveta</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="organizer" class="py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-7">
+                    <h2 class="section-title" style="text-align: left;">Виктория Кадушкина</h2>
+                    <div class="section-title:after ms-0"></div>
+                    <p class="lead text-secondary mt-4">Основательница клуба, танцор</p>
+                    <p class="text-secondary">Занимается 6 лет профессиональными народными танцами, <br>
+                        училась балету. Соосновала клуб чтобы помогать будущим танцорам <br>развиваться
+                        в этом направлении.</p>
+                    <div class="mt-4">
+                        <span class="badge bg-light text-dark me-2 p-3"><i class="fab fa-vk me-2"></i>@dance.vika</span>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <img src="img/vika.jpg" alt="Организатор" class="organizer-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Для кого -->
+    <section id="forwhom" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Кому подойдёт клуб</h2>
+            <p class="text-center text-secondary mb-5">Мы открыты для всех студентов и не только</p>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card-dance p-4 text-center">
+                        <i class="fas fa-seedling fa-3x mb-3" style="color: #4988C4;"></i>
+                        <h4>Новички</h4>
+                        <p>Никогда не танцевали? Начните с основ, а мы поможем!</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-dance p-4 text-center">
+                        <i class="fas fa-star fa-3x mb-3" style="color: #000000;"></i>
+                        <h4>Опытные танцоры</h4>
+                        <p>Хотите отточить технику? у нас есть продвинутые группы и постановки</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-dance p-4 text-center">
+                        <i class="fas fa-heart fa-3x mb-3" style="color: #4988C4;"></i>
+                        <h4>Любители</h4>
+                        <p>Для души, для движения, для новых знакомств - приходите!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Расписание занятий -->
+    <section id="schedule" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="section-title text-center">Расписание</h2>
+            <p class="text-center text-secondary mb-5">Выбирай удобное время и направление</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="list-group">
+                        <div
+                            class="list-group-item d-flex justify-content-between align-items-center p-3 border-0 bg-light mb-2 rounded-4">
+                            <div><i class="fas fa-music me-3" style="color: #000000;"></i> Хип-Хоп</div>
+                            <span class="badge bg-dance text-white px-4 py-2" style="background: #1C4D8D">Пн/ср
+                                14:00</span>
+                        </div>
+                        <div
+                            class="list-group-item d-flex justify-content-between align-items-center p-3 border-0 bg-light mb-2 rounded-4">
+                            <div><i class="fas fa-music me-3" style="color: #000000;"></i> K-поп</div>
+                            <span class="badge bg-dance text-white px-4 py-2" style="background: #1C4D8D">Вт/чт
+                                16:00</span>
+                        </div>
+                        <div
+                            class="list-group-item d-flex justify-content-between align-items-center p-3 border-0 bg-light mb-2 rounded-4">
+                            <div><i class="fas fa-music me-3" style="color: #4988C4;"></i> Контемпори</div>
+                            <span class="badge bg-dance text-white px-4 py-2" style="background:#4988C4;">Пт
+                                16:30</span>
+                        </div>
+                        <div
+                            class="list-group-item d-flex justify-content-between align-items-center p-3 border-0 bg-light rounded-4">
+                            <div><i class="fas fa-music me-3" style="color: #4988C4;"></i> Флешмоб</div>
+                            <span class="badge bg-dance text-white px-4 py-2" style="background: #4988C4;">Сб
+                                15:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы участников -->
+    <section id="testimonials" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Отзывы</h2>
+            <p class="text-center text-secondary mb-5">Что говорят наши танцоры</p>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right mb-3" style="color: #4988C4;"></i>
+                        <p class="text-secondary">Пришла совсем без опыта, а сейчас участвую
+                            в мероприятиях! Клуб стал второй семьей!</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <img src="img/review1.png" class="rounded-circle me-3" width="50">
+                            <div><strong>Екатерина</strong><br><small>студентка 2 курса</small></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right mb-3" style="color: #4988C4;"></i>
+                        <p class="text-secondary">Организация на высоте, всегда интересные
+                            мероприятия. Респект Свете и Вике!</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <img src="img/review2.png" class="rounded-circle me-3" width="50">
+                            <div><strong>Дмитрий</strong><br><small>Студент 4 курса</small></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-right mb-3" style="color: #4988C4;"></i>
+                        <p class="text-secondary">Отличная атмосфера, крутые тренеры.
+                            За полгода поставили технику и нашли друзей!</p>
+                        <div class="d-flex align-items-center mt-3">
+                            <img src="img/review3.png" class="rounded-circle me-3" width="50">
+                            <div><strong>Алина</strong><br><small>Студентка 3 курса</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="gallery" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="section-title text-center">Галерея</h2>
+            <p class="text-center text-secondary mb-5">Яркие моменты наших встреч и выступлений</p>
+            <div class="row g-4">
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="img/dance1.jpg" class="img-fluid" alt="Мастер-класс">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="img/dance2.jpg" class="img-fluid" alt="Выступление">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="img/dance3.jpg" class="img-fluid" alt="Баттл">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="img/dance4.jpg" class="img-fluid" alt="Репетиция">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="img/dance5.jpg" class="img-fluid" alt="Вечеринка">
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="img/dance6.jpg" class="img-fluid" alt="Команда">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-dance"><i class="fas fa-images me-2"></i>Смотреть всё</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Онлайн регистрации -->
+    <section id="register" class="py-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card-dance p-5">
+                        <h2 class="section-title text-center mb-4">Записаться в клуб</h2>
+                        <p class="text-center text-secondary mb-4">Пробное занятие — бесплатно! Просто заполните форму.
+                        </p>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Имя" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="col-12">
+                                    <select class="form-select">
+                                        <option selected disabled>Выберите направление</option>
+                                        <option>Хип-Хоп</option>
+                                        <option>K-поп</option>
+                                        <option>Контемпори</option>
+                                        <option>Флешмоб</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control" rows="3"
+                                        placeholder="Пожелания или вопросы"></textarea>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-dance px-5 py-3 mt-3"><i
+                                            class="fas fa-paper-plane me-2"></i>Отправить заявку</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 class="text-white"><i class="fas fa-fire-flame-simple me-2"></i>Just Dance</h4>
+                    <p>Студенческий танцевальный клуб при колледже.</p>
+                    <img src="img/startap.svg" alt="">
+                </div>
+                <div class="col-md-3">
+                    <h5 class="text-white">Контакты</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>ул. Мурысева, 84</li>
+                        <li><i class="fas fa-envelope me-2"></i>dance@tspk.ru</li>
+                        <li><i class="fas fa-phone me-2"></i> +7 (123) 456-78-90</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="text-white">Мы в соцсетях</h5>
+                    <a href="#" class="me-3"><i class="fab fa-vk fa-2x" style="color: #ffffff;"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-telegram fa-2x" style="color: #ffffff;"></i></a>
+
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <p class="text-center mb-0">© 2026 JustDance — танцуй с нами!</p>
+        </div>
+    </footer>
+
+    <script src="assets/JS/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
